@@ -19,7 +19,11 @@
 #            секунды = s % 60.
 
 def seconds_to_hms(seconds: int) -> str:
-    # TODO: реализовать
+    # total: int = int(input())
+    hours = seconds // 3600
+    min = (seconds % 3600) // 60
+    sec = seconds % 60
+    return f"{hours:02}:{min:02}:{sec:02}"
     pass
 
 
@@ -36,7 +40,12 @@ def seconds_to_hms(seconds: int) -> str:
 # Подсказка: n // 100, (n // 10) % 10, n % 10.
 
 def sum_digits(n: int) -> int:
-    # TODO: реализовать
+    # num: int = input()
+    first = n // 100
+    second = (n // 10) % 10
+    third = n % 10
+    sum = first + second + third
+    return sum
     pass
 
 
@@ -58,7 +67,13 @@ def sum_digits(n: int) -> int:
 # последовательно для каждого номинала.
 
 def coin_change(amount: int) -> dict:
-    # TODO: реализовать
+    out = {
+        50: amount // 50,
+        10: (amount % 50) // 10,
+        5: ((amount % 50) % 10) // 5,
+        1: (((amount % 50) % 10) % 5) // 1
+    }
+    return out
     pass
 
 
@@ -83,7 +98,11 @@ def coin_change(amount: int) -> dict:
 #       print("Не положительное")
 
 def check_positive():
-    # TODO: реализовать
+    if (n := int(input())) > 0:
+       print(f"Положительное: {n}")
+    else:
+       print("Не положительное")
+
     pass
 
 
@@ -109,4 +128,5 @@ if __name__ == "__main__":
     assert coin_change(50) == {50: 1, 10: 0, 5: 0, 1: 0}
 
     # 3.1 — читает с клавиатуры, проверяется вручную
+    check_positive()
     print("p2_advanced: все тесты пройдены (кроме check_positive)")
