@@ -18,10 +18,11 @@
 """
 
 def check_positive():
-    # TODO: реализовать
-    pass
+    if (n := int(input())) > 0:
+       print(f"Положительное: {n}")
+    else:
+       print("Не положительное")
 
 
 if __name__ == "__main__":
     check_positive()
-```

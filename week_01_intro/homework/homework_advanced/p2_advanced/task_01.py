@@ -14,8 +14,10 @@
 """
 
 def seconds_to_hms(seconds: int) -> str:
-    # TODO: реализовать
-    pass
+    hours = seconds // 3600
+    min = (seconds % 3600) // 60
+    sec = seconds % 60
+    return f"{hours:02}:{min:02}:{sec:02}"
 
 
 if __name__ == "__main__":
