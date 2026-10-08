@@ -19,7 +19,7 @@ from decimal import Decimal, ROUND_HALF_UP
 
 
 def total(price: str, qty: int, tax: str) -> str:
-    # TODO: реализовать
+    return (f"Overall: {str(((Decimal(price) * qty * (1 + Decimal(f'0.{tax}'))).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)))}")
     pass
 
 

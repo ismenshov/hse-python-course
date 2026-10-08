@@ -17,7 +17,7 @@ from fractions import Fraction
 
 
 def sum_fractions(f1: str, f2: str) -> str:
-    # TODO: реализовать
+    return str(Fraction(f1) + Fraction(f2))
     pass
 
 

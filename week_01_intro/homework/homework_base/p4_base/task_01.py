@@ -10,7 +10,12 @@
 """
 
 def main():
-    # TODO: реализовать
+    len = 12
+    width = 5
+    area = len * width
+    per = 2 * (len + width)
+    print(area)
+    print(width)
     pass
 
 

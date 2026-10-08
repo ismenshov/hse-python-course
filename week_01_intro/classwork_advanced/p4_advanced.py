@@ -110,7 +110,7 @@ def exact_total(price: str, quantity: int, tax_percent: str) -> str:
     # price = input()
     # quantity = int(input())
     # tax_percent = input()
-    return str(((Decimal(price) * quantity * (1 + Decimal('0.13'))).quantize(Decimal(f'0.{tax_percent}'), rounding=ROUND_HALF_UP)))
+    return str(((Decimal(price) * quantity * (1 + Decimal(f'0.{tax_percent}'))).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)))
     raise NotImplementedError
 
 
