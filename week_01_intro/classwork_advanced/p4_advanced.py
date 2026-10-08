@@ -29,9 +29,14 @@
 #   else:
 #       print("Not a number")
 
+from decimal import Decimal, ROUND_HALF_UP
+from fractions import Fraction
 def safe_input(s: str) -> str:
-    """Вернуть 'OK: <n>' или 'Not a number'."""
-    # TODO: реализовать
+    if s.isdigit() or (s.startswith("-") and s[1:].isdigit()):
+        n = int(s)
+        return (f"OK: {n}")
+    else:
+        return "Not a number"
     raise NotImplementedError
 
 
@@ -50,8 +55,8 @@ def safe_input(s: str) -> str:
 #   Используйте split(":") и int().
 
 def parse_name_age(s: str) -> str:
-    """Вернуть приветствие с возрастом +1."""
-    # TODO: реализовать
+    # s = input("Введите строку вида имя:возраст\n")
+    return (f"Hello, {s.split(":")[0]}! Next year you are {int(s.split(":")[1]) + 1}.")
     raise NotImplementedError
 
 
@@ -76,8 +81,10 @@ def parse_name_age(s: str) -> str:
 # Подсказка: f"value:>10.2f"
 
 def format_receipt(product: str, cost: float, amount: int) -> str:
-    """Вернуть строку чека."""
-    # TODO: реализовать
+    # product = input()
+    # cost = float(input())
+    # amount = int(input())
+    return (f"Product: {product}\nCost: {cost:>10.2f}\nAmount: {amount}\n--------\nOverall: {(cost * amount):>10.2f}")
     raise NotImplementedError
 
 
@@ -100,8 +107,10 @@ def format_receipt(product: str, cost: float, amount: int) -> str:
 #   .quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
 
 def exact_total(price: str, quantity: int, tax_percent: str) -> str:
-    """Вернуть итоговую стоимость строкой с 2 знаками."""
-    # TODO: реализовать
+    # price = input()
+    # quantity = int(input())
+    # tax_percent = input()
+    return str(((Decimal(price) * quantity * (1 + Decimal('0.13'))).quantize(Decimal(f'0.{tax_percent}'), rounding=ROUND_HALF_UP)))
     raise NotImplementedError
 
 
@@ -117,8 +126,11 @@ def exact_total(price: str, quantity: int, tax_percent: str) -> str:
 #   Decimal: 0.3 -> True
 
 def compare_float_decimal() -> tuple:
-    """Вернуть (float_sum, float_eq, decimal_sum, decimal_eq)."""
-    # TODO: реализовать
+    float_sum = 0.1 + 0.2
+    float_eq = float_sum == 0.3
+    decimal_sum = float(Decimal("0.1") + Decimal("0.2"))
+    decimal_eq = decimal_sum == 0.3
+    return float_sum, float_eq, decimal_sum, decimal_eq
     raise NotImplementedError
 
 
@@ -137,7 +149,9 @@ def compare_float_decimal() -> tuple:
 
 def sum_fractions(frac1: str, frac2: str) -> str:
     """Вернуть несократимую сумму дробей строкой."""
-    # TODO: реализовать
+    # frac1 = input()
+    # frac2 = input()
+    return str(Fraction(frac1) + Fraction(frac2))
     raise NotImplementedError
 
 
@@ -160,8 +174,14 @@ def sum_fractions(frac1: str, frac2: str) -> str:
 #   точно совпала со счётом?
 
 def split_bill(account: str, guests: int) -> dict:
-    """Вернуть {'share': Decimal, 'total': Decimal, 'over': Decimal}."""
-    # TODO: реализовать
+    share = (Decimal(account) / Decimal(guests)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP)
+    total = share * guests
+    over = Decimal(account) - total
+    return {
+        'share': share,
+        'total': total,
+        'over': over
+    }
     raise NotImplementedError
 
 
