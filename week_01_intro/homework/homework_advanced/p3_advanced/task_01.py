@@ -14,7 +14,13 @@
 """
 
 def has_duplicates_fast(nums: list) -> bool:
-    # TODO: реализовать
+    unique_num = set()
+    for i in nums:
+        if i in unique_num:
+                return True
+        else:
+            unique_num.add(i)
+    return False
     pass
 
 

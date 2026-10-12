@@ -14,7 +14,14 @@
 """
 
 def min_max(nums: list) -> tuple:
-    # TODO: реализовать
+    # return (min(nums), max(nums))
+    min_val = max_val = nums[0]
+    for i in nums:
+        if i < min_val:
+            min_val = i
+        if i > max_val:
+            max_val = i
+    return (min_val, max_val)
     pass
 
 
@@ -23,4 +30,3 @@ if __name__ == "__main__":
     assert min_max([7]) == (7, 7)
     assert min_max([-5, -1, -10]) == (-10, -1)
     print("task_02 (p3 advanced): тесты пройдены")
-```

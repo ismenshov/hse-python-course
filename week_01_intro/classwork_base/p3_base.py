@@ -17,7 +17,8 @@ def has_duplicates_slow(nums: list) -> bool:
     result = False
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
-            # TODO: если nums[i] == nums[j], присвойте result = True
+            if nums[i] == nums[j]:
+                result = True
             pass
     return result
 
@@ -33,9 +34,9 @@ def has_duplicates_fast(nums: list) -> bool:
     result = False
     for x in nums:
         if x in seen:
-            # TODO: присвойте result = True
+            result = True
             pass
-        # TODO: добавьте x в seen, seen.add(x)
+        seen.add(x)
         pass
     return result
 
@@ -51,7 +52,8 @@ def has_duplicates_fast(nums: list) -> bool:
 def complexity_a() -> str:
     # for x in items:
     #     print(x)
-    answer = "..."  # TODO
+
+    answer = "O(n)"
     return answer
 
 
@@ -59,7 +61,7 @@ def complexity_b() -> str:
     # for x in items:
     #     for y in items:
     #         print(x, y)
-    answer = "..."  # TODO
+    answer = "O(n^2)"
     return answer
 
 
@@ -67,7 +69,7 @@ def complexity_c() -> str:
     # i = 0
     # while i < n:
     #     i *= 2
-    answer = "..."  # TODO
+    answer = "O(log n)"
     return answer
 
 
@@ -77,7 +79,7 @@ def complexity_d() -> str:
     # for x in items:
     #     for y in items:
     #         pass
-    answer = "..."  # TODO
+    answer = "O(n^2)"
     return answer
 
 

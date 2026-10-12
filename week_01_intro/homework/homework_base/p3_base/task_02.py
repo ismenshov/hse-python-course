@@ -31,25 +31,25 @@
 """
 
 def complexity_a() -> str:
-    # TODO
+    return "O(n)"
     pass
 
 
 def complexity_b() -> str:
-    # TODO
+    return "O(n^2)"
     pass
 
 
 def complexity_c() -> str:
-    # TODO
+    return "O(log n)"
     pass
 
 
 def complexity_d() -> str:
-    # TODO
+    return "O(n^2)"
     pass
 
 
 if __name__ == "__main__":
     print(complexity_a(), complexity_b(), complexity_c(), complexity_d())
-```
+
