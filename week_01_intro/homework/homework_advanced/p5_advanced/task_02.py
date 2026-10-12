@@ -15,7 +15,15 @@
 """
 
 def min_platforms(arrivals: list, departures: list) -> int:
-    # TODO: реализовать
+    events = [(t, 1) for t in arrivals] + [(t, -1) for t in departures]
+    events.sort()
+    current = 0
+    best = 0
+    for _, delta in events:
+        current += delta
+        if current > best:
+            best = current
+    return best
     pass
 
 

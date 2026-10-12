@@ -25,7 +25,13 @@
 
 def min_coins(amount: int, coins: list) -> int:
     """Вернуть минимальное число монет или -1, если нельзя."""
-    # TODO: реализовать
+    coins.sort(reverse=True)
+    count = 0
+    for coin in coins:
+        while amount >= coin:
+            amount -= coin
+            count += 1
+    return count if amount == 0 else -1
     raise NotImplementedError
 
 
@@ -43,13 +49,20 @@ def min_coins(amount: int, coins: list) -> int:
 #
 # Пример:
 #   intervals = [(1,4),(3,5),(0,6),(5,7),(3,9),(5,9),(6,10),(8,11)]
-#   Ответ: 4
+#   Ответ: 3
 #
 # Сложность: O(n log n).
 
 def max_intervals(intervals: list) -> int:
     """Вернуть максимальное число непересекающихся интервалов."""
-    # TODO: реализовать
+    intervals.sort(key=lambda x: x[1])
+    count = 0
+    last_end = float("-inf")
+    for start, end in intervals:
+        if start >= last_end:
+            count += 1
+            last_end = end
+    return count
     raise NotImplementedError
 
 
@@ -74,7 +87,16 @@ def fractional_knapsack(capacity: float, items: list) -> float:
     items: список кортежей (weight, value).
     Вернуть максимальную суммарную стоимость.
     """
-    # TODO: реализовать
+    items.sort(key=lambda x: x[1] / x[0], reverse=True)
+    total = 0.0
+    for weight, value in items:
+        if capacity >= weight:
+            total += value
+            capacity -= weight
+        else:
+            total += value * (capacity / weight)
+            capacity = 0
+    return total
     raise NotImplementedError
 
 
@@ -103,7 +125,15 @@ def fractional_knapsack(capacity: float, items: list) -> float:
 
 def min_platforms(arrivals: list, departures: list) -> int:
     """Вернуть минимальное число платформ."""
-    # TODO: реализовать
+    events = [(t, 1) for t in arrivals] + [(t, -1) for t in departures]
+    events.sort()
+    current = 0
+    best = 0
+    for _, delta in events:
+        current += delta
+        if current > best:
+            best = current
+    return best
     raise NotImplementedError
 
 
@@ -119,7 +149,7 @@ if __name__ == "__main__":
 
     # 2
     intervals = [(1,4),(3,5),(0,6),(5,7),(3,9),(5,9),(6,10),(8,11)]
-    assert max_intervals(intervals) == 4
+    assert max_intervals(intervals) == 3
     assert max_intervals([]) == 0
 
     # 3

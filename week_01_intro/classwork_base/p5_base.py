@@ -21,8 +21,8 @@ def min_coins(amount: int, coins: list) -> int:
     count = 0
     for coin in coins:
         while amount >= coin:
-            # TODO: вычтите coin из amount
-            # TODO: увеличьте count на 1
+            amount -= coin
+            count += 1
             pass
     return count
 
@@ -40,7 +40,7 @@ def min_coins(amount: int, coins: list) -> int:
 #
 # Пример:
 #   intervals = [(1,4),(3,5),(0,6),(5,7),(3,9),(5,9),(6,10),(8,11)]
-#   Ответ: 4
+#   Ответ: 3
 
 def max_intervals(intervals: list) -> int:
     intervals.sort(key=lambda x: x[1])
@@ -48,8 +48,8 @@ def max_intervals(intervals: list) -> int:
     last_end = float("-inf")
     for start, end in intervals:
         if start >= last_end:
-            # TODO: увеличьте count на 1
-            # TODO: присвойте last_end = end
+            count += 1
+            last_end = end
             pass
     return count
 
@@ -74,12 +74,12 @@ def fractional_knapsack(capacity: float, items: list) -> float:
     total = 0.0
     for weight, value in items:
         if capacity >= weight:
-            # TODO: добавьте value к total
-            # TODO: вычтите weight из capacity
+            total += value
+            capacity -= weight
             pass
         else:
-            # TODO: добавьте value * (capacity / weight) к total
-            # TODO: присвойте capacity = 0
+            total += value * (capacity / weight)
+            capacity = 0
             pass
     return total
 
@@ -108,8 +108,9 @@ def min_platforms(arrivals: list, departures: list) -> int:
     current = 0
     best = 0
     for _, delta in events:
-        # TODO: прибавьте delta к current
-        # TODO: если current > best, присвойте best = current
+        current += delta
+        if current > best:
+            best = current
         pass
     return best
 
