@@ -31,38 +31,50 @@
 
 def hw_2_1_category(exp: int, perf: int) -> str:
     """Вернуть 'senior', 'middle' или 'junior'."""
-    # TODO: реализовать
+    return 'senior' if exp >= 5 and perf >= 80 else ('middle' if exp >= 2 and perf >= 60 else 'junior')
     pass
 
 
 def hw_2_2_bonus(exp: int, perf: int) -> int:
     """Вернуть процент премии (0/10/15/20/30)."""
-    # TODO: реализовать
+    category = hw_2_1_category(exp, perf)
+    if category == 'senior':
+        if perf >= 95:
+            return 30
+        else:
+            return 20
+    elif category == 'middle':
+        if perf >= 75:
+            return 15
+        else:
+            return 10
+    else:
+        return 0
     pass
 
 
 def hw_2_3_valid(exp: int, perf: int) -> bool:
     """Вернуть True, если стаж и оценка корректны."""
-    # TODO: реализовать
+    return 0 <= exp and 0 <= perf <= 100
     pass
 
 
 def hw_2_4_line(exp: int, perf: int) -> str:
     """Вернуть 'категория:премия'."""
-    # TODO: реализовать
+    return f'{hw_2_1_category(exp, perf)}:{hw_2_2_bonus(exp, perf)}'
     pass
 
 
 def hw_2_5_big_bonus(exp: int, perf: int) -> bool:
     """Вернуть True, если премия > 15."""
-    # TODO: реализовать
+    return hw_2_2_bonus(exp, perf) > 15
     pass
 
 
 def hw_2_6_any_senior(a_exp: int, a_perf: int,
                      b_exp: int, b_perf: int) -> bool:
     """Вернуть True, если хотя бы один — senior."""
-    # TODO: реализовать
+    return hw_2_1_category(a_exp, a_perf) == 'senior' or hw_2_1_category(b_exp, b_perf) == 'senior'
     pass
 
 

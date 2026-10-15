@@ -26,49 +26,66 @@ import re
 
 def hw_5_1_keys(data: str) -> list[str]:
     """Вернуть список ключей."""
-    # TODO: реализовать
+    result = []
+    for pair in data.split(';'):
+        result.append(pair.split('=')[0])
+    return result
     pass
 
 
 def hw_5_2_values(data: str) -> list[str]:
     """Вернуть список значений."""
-    # TODO: реализовать
+    result = []
+    for pair in data.split(';'):
+        result.append(pair.split('=')[1])
+    return result
     pass
 
 
 def hw_5_3_all_nonempty(data: str) -> bool:
     """Вернуть True, если все значения непустые."""
-    # TODO: реализовать
+    for pair in data.split(';'):
+        if not pair.split('=')[1]: return False
+    return True
     pass
 
 
 def hw_5_4_keys_latin(data: str) -> bool:
     """Вернуть True, если все ключи — только латинские буквы/цифры."""
-    # TODO: реализовать
+    keys = [pair.split('=', 1)[0] for pair in data.split(';')]
+    return all(re.fullmatch(r'[A-Za-z0-9]+', key) for key in keys)
     pass
 
 
 def hw_5_5_has_digit(data: str) -> bool:
     """Вернуть True, если есть хотя бы одна цифра."""
-    # TODO: реализовать
+    return re.search(r'\d', data) is not None
     pass
 
 
 def hw_5_6_port_ok(data: str) -> bool:
     """Вернуть True, если port задан числом."""
-    # TODO: реализовать
+    return re.search(r'port=\d', data) is not None
     pass
 
 
 def hw_5_7_host_ok(data: str) -> bool:
     """Вернуть True, если host непустой и без пробелов."""
-    # TODO: реализовать
+    for part in data.split(';'):
+        key, sep, value = part.partition('=')
+        if key == 'host':
+            return bool(sep and value and not any(char.isspace() for char in value))
+        return False
     pass
 
 
 def hw_5_8_to_dict(data: str) -> dict[str, str]:
     """Вернуть словарь пар ключ=значение."""
-    # TODO: реализовать
+    pairs = data.split(';')
+    result = {}
+    for pair in pairs:
+        result[pair.split('=')[0]] = pair.split('=')[1]
+    return result
     pass
 
 

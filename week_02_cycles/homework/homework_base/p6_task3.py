@@ -19,31 +19,37 @@
 
 def hw_3_1_level(line: str) -> str:
     """Вернуть уровень до ':'."""
-    # TODO: реализовать
+    return line.split(':')[0]
     pass
 
 
 def hw_3_2_message(line: str) -> str:
     """Вернуть сообщение после ':'."""
-    # TODO: реализовать
+    return line.split(':')[1]
     pass
 
 
 def hw_3_3_is_alert(line: str) -> bool:
     """Вернуть True, если уровень 'ERROR' или 'WARN'."""
-    # TODO: реализовать
+    return line.split(':')[0] == "ERROR" or line.split(':')[0] == "WARN"
     pass
 
 
 def hw_3_4_message_clean(line: str) -> bool:
     """Вернуть True, если сообщение не пустое и без пробелов по краям."""
-    # TODO: реализовать
-    pass
+    line_new = line.split(':')
+    if not bool(line_new[1]):
+        return False
+    elif line_new[1] != line_new[1].strip():
+        return False
+    else:
+        return True
 
 
 def hw_3_5_normalize(line: str) -> str:
     """Вернуть 'LEVEL:message' в нормализованном виде."""
-    # TODO: реализовать
+    new_line = line.split(":")
+    return new_line[0].upper()+":"+new_line[1].lower()
     pass
 
 

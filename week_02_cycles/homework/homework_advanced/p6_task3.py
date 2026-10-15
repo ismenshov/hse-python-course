@@ -26,43 +26,45 @@ import re
 
 def hw_3_1_date(line: str) -> str:
     """Вернуть дату (до первого '|')."""
-    # TODO: реализовать
+    return line.split('|')[0]
     pass
 
 
 def hw_3_2_level(line: str) -> str:
     """Вернуть уровень (вторая часть)."""
-    # TODO: реализовать
+    return line.split('|')[1]
     pass
 
 
 def hw_3_3_message(line: str) -> str:
     """Вернуть сообщение (третья часть)."""
-    # TODO: реализовать
+    return line.split('|')[2]
     pass
 
 
 def hw_3_4_well_formed(line: str) -> bool:
     """Вернуть True, если ровно три непустые части."""
-    # TODO: реализовать
+    parts = line.split('|')
+    return len(parts) == 3 and all(part.strip() for part in parts)
     pass
 
 
 def hw_3_5_is_alert(line: str) -> bool:
     """Вернуть True, если уровень 'ERROR' или 'WARN'."""
-    # TODO: реализовать
+    return line.split('|')[1] == 'ERROR' or line.split('|')[1] == 'WARN'
     pass
 
 
 def hw_3_6_date_ok(line: str) -> bool:
     """Вернуть True, если дата вида YYYY-MM-DD."""
-    # TODO: реализовать
+    return re.fullmatch(r"^\d{4}-\d{2}-\d{2}$", line.split('|')[0].split(' ')[0]) is not None
     pass
 
 
 def hw_3_7_normalize(line: str) -> str:
     """Вернуть нормализованный лог."""
-    # TODO: реализовать
+    new_line = line.split('|')
+    return new_line[0]+'|'+new_line[1].upper()+'|'+new_line[2].lower()
     pass
 
 

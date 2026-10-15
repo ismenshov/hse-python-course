@@ -28,31 +28,46 @@ import re
 
 def hw_1_1_login_ok(login: str) -> bool:
     """Вернуть True, если логин корректен."""
-    # TODO: реализовать
+    return 3 <= len(login) <= 20 and len(login) == len(re.sub(r'\s+', '', login))
     pass
 
 
 def hw_1_2_email_ok(email: str) -> bool:
     """Вернуть True, если email подходит под шаблон."""
-    # TODO: реализовать
+    return re.fullmatch(r'\w+@\w+\.[a-z]{2,3}', email) is not None
     pass
 
 
 def hw_1_3_age_ok(age: int) -> bool:
     """Вернуть True, если 18 <= age <= 120."""
-    # TODO: реализовать
+    return 18 <= age <= 120
     pass
 
 
 def hw_1_4_all_ok(login: str, email: str, age: int) -> bool:
     """Вернуть True, если все поля корректны."""
-    # TODO: реализовать
+    return hw_1_1_login_ok(login) and hw_1_2_email_ok(email) and hw_1_3_age_ok(age)
     pass
 
 
 def hw_1_5_first_error(login: str, email: str, age: int) -> str:
     """Вернуть текст первой ошибки или 'ok'."""
-    # TODO: реализовать
+    if not login:
+        return "empty login"
+    elif len(login) < 3:
+        return "short login"
+    elif len(login) > 20:
+        return "long login"
+    elif not len(login) == len(re.sub(r'\s+', '', login)):
+        return "space in login"
+    elif not hw_1_2_email_ok(email):
+        return "bad email"
+    elif age < 18:
+        return "too young"
+    elif age > 120:
+        return "too old"
+    else:
+        return "ok"
     pass
 
 

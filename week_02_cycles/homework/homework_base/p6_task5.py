@@ -20,31 +20,40 @@ import re
 
 def hw_5_1_keys(data: str) -> list[str]:
     """Вернуть список ключей."""
-    # TODO: реализовать
+    result = []
+    for pair in data.split(';'):
+        result.append(pair.split('=')[0])
+    return result
     pass
 
 
 def hw_5_2_values(data: str) -> list[str]:
     """Вернуть список значений."""
-    # TODO: реализовать
+    result = []
+    for pair in data.split(';'):
+        result.append(pair.split('=')[1])
+    return result
     pass
 
 
 def hw_5_3_all_nonempty(data: str) -> bool:
     """Вернуть True, если все значения непустые."""
-    # TODO: реализовать
+    for pair in data.split(';'):
+        if not pair.split('=')[1]: return False
+    return True
     pass
 
 
 def hw_5_4_has_digit(data: str) -> bool:
     """Вернуть True, если в строке есть хотя бы одна цифра."""
-    # TODO: реализовать
+    return re.search(r'\d', data) is not None
     pass
 
 
 def hw_5_5_keys_latin(data: str) -> bool:
     """Вернуть True, если все ключи — только латинские буквы."""
-    # TODO: реализовать
+    keys = [pair.split('=', 1)[0] for pair in data.split(';')]
+    return all(re.fullmatch(r'[A-Za-z]+', key) for key in keys)
     pass
 
 

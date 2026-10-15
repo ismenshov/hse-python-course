@@ -20,8 +20,7 @@ import re
 # Проверьте, что x лежит от 1 до 100 включительно одной строкой.
 
 def task_1_4(x: int) -> bool:
-    """Вернуть True, если 1 <= x <= 100."""
-    # TODO: реализовать
+    return 1 <= x <= 100
     pass
 
 
@@ -34,7 +33,7 @@ def task_1_4(x: int) -> bool:
 
 def task_1_5(a: str, b: str) -> tuple[bool, bool]:
     """Вернуть (a == b, a < b)."""
-    # TODO: реализовать
+    return (a == b, a > b)
     pass
 
 
@@ -45,7 +44,7 @@ def task_1_5(a: str, b: str) -> tuple[bool, bool]:
 
 def task_1_6(age: int) -> bool:
     """Вернуть True, если 18 <= age <= 65."""
-    # TODO: реализовать
+    return 18 <= age <= 65
     pass
 
 
@@ -57,9 +56,8 @@ def task_1_6(age: int) -> bool:
 
 def task_1_7() -> int:
     """Вернуть номер варианта, который даёт False."""
-    # TODO: реализовать
+    return 3
     pass
-
 
 # ------------------------------------------------------------
 # Задача 1.8 (уровень 3). Допишите строку
@@ -68,7 +66,7 @@ def task_1_7() -> int:
 
 def task_1_8(a: float, b: float) -> bool:
     """Вернуть True, если a и b близки."""
-    # TODO: реализовать
+    return math.isclose(a, b)
     pass
 
 
@@ -79,7 +77,7 @@ def task_1_8(a: float, b: float) -> bool:
 
 def task_1_9(a: float, b: float, c: float) -> bool:
     """Вернуть True, если a < b < c."""
-    # TODO: реализовать
+    return a < b < c
     pass
 
 
@@ -94,7 +92,8 @@ def task_1_9(a: float, b: float, c: float) -> bool:
 
 def task_2_4(year: int) -> bool:
     """Вернуть True, если год високосный."""
-    # TODO: реализовать
+    leap = ((year % 4 == 0 and year % 100 > 0) or year % 400 == 0)
+    return leap
     pass
 
 
@@ -108,7 +107,10 @@ def task_2_4(year: int) -> bool:
 
 def task_2_5(x: int) -> bool:
     """Вернуть True, если 0 < x < 10."""
-    # TODO: реализовать
+    if x > 0 and x < 10:
+        return True
+    else:
+        return False
     pass
 
 
@@ -120,7 +122,7 @@ def task_2_5(x: int) -> bool:
 
 def task_2_6(password: str) -> bool:
     """Вернуть True, если len(password) > 8 и '!' в password."""
-    # TODO: реализовать
+    return (len(password) >= 8 and "!" in password)
     pass
 
 
@@ -135,7 +137,8 @@ def task_2_6(password: str) -> bool:
 
 def task_2_7() -> tuple:
     """Вернуть (x or 'default', 'a' and 'b', 0 and 10 / x) при x = 0."""
-    # TODO: реализовать
+    x = 0
+    return (x or "default", "a" and "b", 0 and 10 / x)
     pass
 
 
@@ -146,7 +149,7 @@ def task_2_7() -> tuple:
 
 def task_2_8(name: str) -> str:
     """Вернуть name или 'guest', если name пустая."""
-    # TODO: реализовать
+    return name or "guest"
     pass
 
 
@@ -158,7 +161,7 @@ def task_2_8(name: str) -> str:
 
 def task_2_9(age: int, clean: bool) -> bool:
     """Вернуть True, если age >= 18 и clean."""
-    # TODO: реализовать
+    return age >= 18 and clean
     pass
 
 
@@ -178,7 +181,10 @@ def task_2_9(age: int, clean: bool) -> bool:
 
 def task_3_4(a: int, b: int) -> str:
     """Вернуть '1'..'4' по логике задачи."""
-    # TODO: реализовать
+    if a > b: return "1"
+    elif a == b: return "2"
+    elif a < b: return "3"
+    else: return "4"
     pass
 
 
@@ -189,7 +195,13 @@ def task_3_4(a: int, b: int) -> str:
 
 def task_3_5(total: float) -> float:
     """Вернуть скидку: 0.20 / 0.10 / 0.0."""
-    # TODO: реализовать
+    if total > 5000:
+        discount = 0.20
+    elif total > 1000:
+        discount = 0.10
+    else:
+        discount = 0.0
+    return discount
     pass
 
 
@@ -200,7 +212,12 @@ def task_3_5(total: float) -> float:
 
 def task_3_6(n: float) -> str:
     """Вернуть 'positive', 'negative' или 'zero'."""
-    # TODO: реализовать
+    if n > 0:
+        return "positive"
+    elif n == 0:
+        return "zero"
+    else:
+        return "negative"
     pass
 
 
@@ -211,7 +228,7 @@ def task_3_6(n: float) -> str:
 
 def task_3_7(n: int) -> str:
     """Вернуть 'even' или 'odd' через тернарный оператор."""
-    # TODO: реализовать
+    return "even" if n % 2 == 0 else "odd"
     pass
 
 
@@ -222,7 +239,7 @@ def task_3_7(n: int) -> str:
 
 def task_3_8(a: int, b: int, c: int) -> int:
     """Вернуть максимум из трёх через тернарный оператор."""
-    # TODO: реализовать
+    return a if a > b and a > c else (b if b > c else c)
     pass
 
 
@@ -234,7 +251,7 @@ def task_3_8(a: int, b: int, c: int) -> int:
 
 def task_3_9() -> int:
     """Вернуть номер правильного варианта."""
-    # TODO: реализовать
+    return 3
     pass
 
 
@@ -256,7 +273,13 @@ def task_3_9() -> int:
 
 def task_4_4(x: int) -> str:
     """Вернуть строку по логике задачи."""
-    # TODO: реализовать
+    if x > 0:
+        if x % 2 == 0:
+            return ("positive even")
+        else:
+            return ("positive odd")
+    else:
+        return ("non-positive")
     pass
 
 
@@ -267,7 +290,12 @@ def task_4_4(x: int) -> str:
 
 def task_4_5(x: int) -> str:
     """То же, что 4.4, но без вложенных if."""
-    # TODO: реализовать
+    if x > 0 and x % 2 == 0:
+        return ("positive even")
+    elif x > 0 and x % 2 != 0:
+        return ("positive odd")
+    else:
+        return ("non-positive")
     pass
 
 
@@ -279,7 +307,16 @@ def task_4_5(x: int) -> str:
 
 def task_4_6(x: int) -> str:
     """Вернуть описание числа по логике задачи."""
-    # TODO: реализовать
+    if x > 0:
+        if (x % 2 == 0):
+            return "positive even"
+        else:
+            return "positive odd"
+    else:
+        if (x % 3 == 0):
+            return "negative divisible by 3"
+        else:
+            return "negative not divisible by 3"
     pass
 
 
@@ -291,7 +328,7 @@ def task_4_6(x: int) -> str:
 
 def task_4_7() -> int:
     """Вернуть номер правильного варианта."""
-    # TODO: реализовать
+    return 2
     pass
 
 
@@ -302,7 +339,12 @@ def task_4_7() -> int:
 
 def task_4_8(a: int, b: int, c: int) -> str:
     """Вернуть 'equilateral', 'isosceles' или 'scalene'."""
-    # TODO: реализовать
+    if a == b == c:
+        return "equilateral"
+    elif a == b or a == c or b == c:
+        return "isosceles"
+    else:
+        return "scalene"
     pass
 
 
@@ -314,7 +356,10 @@ def task_4_8(a: int, b: int, c: int) -> str:
 
 def task_4_9(login: str, password: str) -> str:
     """Вернуть 'ok' или 'fail'."""
-    # TODO: реализовать
+    if login and len(password) > 6 and password.isalnum() and not password.isalpha():
+        return "ok"
+    else:
+        return "fail"
     pass
 
 
@@ -331,7 +376,7 @@ def task_4_9(login: str, password: str) -> str:
 
 def task_5_4(s: str) -> tuple[list[str], int]:
     """Вернуть (s.split(','), len(s.split(',')))."""
-    # TODO: реализовать
+    return (s.split(','), len(s.split(',')))
     pass
 
 
@@ -342,7 +387,7 @@ def task_5_4(s: str) -> tuple[list[str], int]:
 
 def task_5_5(s: str) -> bool:
     """Вернуть True, если s — палиндром без учёта регистра."""
-    # TODO: реализовать
+    return s.lower() == s.lower()[::-1]
     pass
 
 
@@ -353,7 +398,7 @@ def task_5_5(s: str) -> bool:
 
 def task_5_6(s: str) -> str:
     """Вернуть s без первого и последнего символа."""
-    # TODO: реализовать
+    return s[1:-1]
     pass
 
 
@@ -365,7 +410,7 @@ def task_5_6(s: str) -> str:
 
 def task_5_7() -> int:
     """Вернуть номер правильного варианта."""
-    # TODO: реализовать
+    return 2
     pass
 
 
@@ -376,7 +421,7 @@ def task_5_7() -> int:
 
 def task_5_8(s: str) -> int:
     """Вернуть число вхождений 'a' в s."""
-    # TODO: реализовать
+    return s.count('a')
     pass
 
 
@@ -388,7 +433,8 @@ def task_5_8(s: str) -> int:
 
 def task_5_9(full_name: str) -> str:
     """Вернуть 'Фамилия И.'."""
-    # TODO: реализовать
+    name = full_name.split(' ')
+    return name[1]+" "+name[0][0]+"."
     pass
 
 
@@ -404,7 +450,7 @@ def task_5_9(full_name: str) -> str:
 
 def task_6_4() -> int:
     """Вернуть номер правильного варианта."""
-    # TODO: реализовать
+    return 2
     pass
 
 
@@ -415,7 +461,8 @@ def task_6_4() -> int:
 
 def task_6_5(s: str) -> int:
     """Вернуть сумму всех чисел в s."""
-    # TODO: реализовать
+    nums = list(map(int, re.findall(r"\d+", s)))
+    return sum(nums)
     pass
 
 
@@ -427,7 +474,7 @@ def task_6_5(s: str) -> int:
 
 def task_6_6(s: str) -> bool:
     """Вернуть True, если s соответствует +7XXXXXXXXXX."""
-    # TODO: реализовать
+    return re.fullmatch(r"\+7[0-9]{10}", s) is not None
     pass
 
 
@@ -438,7 +485,7 @@ def task_6_6(s: str) -> bool:
 
 def task_6_7(s: str) -> str:
     """Вернуть s с пробелами, заменёнными на '_'."""
-    # TODO: реализовать
+    return re.sub(r" ", "_", s)
     pass
 
 
@@ -450,7 +497,7 @@ def task_6_7(s: str) -> str:
 
 def task_6_8() -> int:
     """Вернуть номер правильного варианта."""
-    # TODO: реализовать
+    return 3
     pass
 
 
@@ -462,7 +509,7 @@ def task_6_8() -> int:
 
 def task_6_9(email: str) -> bool:
     """Вернуть True, если email соответствует упрощённому шаблону."""
-    # TODO: реализовать
+    return re.fullmatch(r"^[A-Za-z0-9]+@[A-Za-z]+\.[A-Za-z]{2,3}", email) is not None
     pass
 
 

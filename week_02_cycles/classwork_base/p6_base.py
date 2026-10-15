@@ -21,7 +21,7 @@ import re
 # Запишите вывод в комментарии ниже.
 
 def task_1_1():
-    # TODO: реализовать
+    print(2 + 2 == 4, 2 * 2 != 4)
     pass
 
 
@@ -33,7 +33,9 @@ def task_1_1():
 # ok = ???  # -> true
 
 def task_1_2():
-    # TODO: реализовать
+    x = 42
+    ok = x > 0
+    print(ok)
     pass
 
 
@@ -46,7 +48,9 @@ def task_1_2():
 # Что не так и как исправить?
 
 def task_1_3():
-    # TODO: реализовать
+    x = 5
+    if x == 5:
+        print("five")
     pass
 
 
@@ -58,7 +62,7 @@ def task_1_3():
 # ok = ???  # -> true
 
 def task_1_4():
-    # TODO: реализовать
+    print(1 <= (x := 42) <= 100)
     pass
 
 
@@ -74,7 +78,9 @@ def task_1_4():
 # 4. True False
 
 def task_1_5():
-    # TODO: реализовать
+    a = "apple"
+    b = "Apple"
+    print(a == b, a < b)
     pass
 
 
@@ -84,7 +90,7 @@ def task_1_5():
 # Запросите возраст и выведите True, если он от 18 до 65 включительно.
 
 def task_1_6():
-    # TODO: реализовать
+    print(18 <= (age := int(input())) <= 65)
     pass
 
 
@@ -98,7 +104,7 @@ def task_1_6():
 # print(not True or True and False)
 
 def task_2_1():
-    # TODO: реализовать
+    print(not True or True and False)
     pass
 
 
@@ -110,7 +116,9 @@ def task_2_1():
 # ok = ???  # -> true
 
 def task_2_2():
-    # TODO: реализовать
+    x = 8
+    ok = x % 2 == 0
+    print(ok)
     pass
 
 
@@ -124,7 +132,8 @@ def task_2_2():
 # 4. a == True
 
 def task_2_3():
-    # TODO: реализовать
+    a = 0
+    print(not a)
     pass
 
 
@@ -136,7 +145,9 @@ def task_2_3():
 # leap = ???
 
 def task_2_4():
-    # TODO: реализовать
+    year = 2024
+    leap = ((year % 4 == 0 and year % 100 > 0) or year % 400 == 0)
+    print(leap)
     pass
 
 
@@ -149,7 +160,9 @@ def task_2_4():
 # Условие всегда истинно. Как исправить?
 
 def task_2_5():
-    # TODO: реализовать
+    x = 5
+    if x > 0 and x < 10:
+        print("ok")
     pass
 
 
@@ -160,7 +173,8 @@ def task_2_5():
 # и содержит "!".
 
 def task_2_6():
-    # TODO: реализовать
+    password = input()
+    print(len(password) > 8 and "!" in password)
     pass
 
 
@@ -180,7 +194,13 @@ def task_2_6():
 #     print("small")
 
 def task_3_1():
-    # TODO: реализовать
+    x = 5
+    if x > 10:
+        print("big")
+    elif x > 3:
+        print("medium")
+    else:
+        print("small")
     pass
 
 
@@ -192,7 +212,11 @@ def task_3_1():
 # print(???)
 
 def task_3_2():
-    # TODO: реализовать
+    n = 9
+    if n % 3 == 0:
+        print("yes")
+    else:
+        print("no")
     pass
 
 
@@ -205,7 +229,11 @@ def task_3_2():
 # print("negative")
 
 def task_3_3():
-    # TODO: реализовать
+    x = 0
+    if x > 0:
+        print("positive")
+    else:
+        print("negative")
     pass
 
 
@@ -223,7 +251,15 @@ def task_3_3():
 #     print("4")
 
 def task_3_4():
-    # TODO: реализовать
+    a, b = 5, 10
+    if a > b:
+        print("1")
+    elif a == b:
+        print("2")
+    elif a < b:
+        print("3")
+    else:
+        print("4")
     pass
 
 
@@ -240,7 +276,13 @@ def task_3_4():
 #     discount = 0.0
 
 def task_3_5():
-    # TODO: реализовать
+    total = float(input())
+    if total > 5000:
+        discount = 0.20
+    elif total > 1000:
+        discount = 0.10
+    else:
+        discount = 0.0
     pass
 
 
@@ -250,7 +292,13 @@ def task_3_5():
 # Запросите число и выведите "positive", "negative" или "zero".
 
 def task_3_6():
-    # TODO: реализовать
+    number = int(input())
+    if number > 0:
+        print("positive")
+    elif number == 0:
+        print("zero")
+    else:
+        print("negative")
     pass
 
 
@@ -269,7 +317,12 @@ def task_3_6():
 #         print("b <= a")
 
 def task_4_1():
-    # TODO: реализовать
+    a, b = 3, 7
+    if a > 0:
+        if b > a:
+            print("b > a")
+        else:
+            print("b <= a")
     pass
 
 
@@ -283,7 +336,11 @@ def task_4_1():
 #     ???
 
 def task_4_2():
-    # TODO: реализовать
+    age = 20
+    license = True
+    if age >= 18:
+        if license:
+            return True
     pass
 
 
@@ -295,7 +352,10 @@ def task_4_2():
 #     print("both positive")
 
 def task_4_3():
-    # TODO: реализовать
+    a, b = 4, 5
+    if a > 0:
+        if b > 0:
+            print("both positive")
     pass
 
 
@@ -312,7 +372,14 @@ def task_4_3():
 #     print("non-positive")
 
 def task_4_4():
-    # TODO: реализовать
+    x = 12
+    if x > 0:
+        if x % 2 == 0:
+            print("positive even")
+        else:
+            print("positive odd")
+    else:
+        print("non-positive")
     pass
 
 
@@ -322,7 +389,13 @@ def task_4_4():
 # Перепишите код из 4.4 через and / elif — без вложенных if.
 
 def task_4_5():
-    # TODO: реализовать
+    x = 12
+    if x > 0 and x % 2 == 0:
+        print("positive even")
+    elif x > 0 and x % 2 != 0:
+        print("positive odd")
+    else:
+        print("non-positive")
     pass
 
 
@@ -333,7 +406,11 @@ def task_4_5():
 # если отрицательное — проверьте, делится ли на 3.
 
 def task_4_6():
-    # TODO: реализовать
+    n = int(input())
+    if n > 0:
+        print(n % 2 == 0)
+    else:
+        print(n % 3 == 0)
     pass
 
 
@@ -348,7 +425,8 @@ def task_4_6():
 # print(s[::-1], s.lower(), len(s))
 
 def task_5_1():
-    # TODO: реализовать
+    s = "Hello"
+    print(s[::-1], s.lower(), len(s))
     pass
 
 
@@ -360,7 +438,9 @@ def task_5_1():
 # res = ???
 
 def task_5_2():
-    # TODO: реализовать
+    s = "  hello  "
+    res = s.strip().lower()
+    print(res)
     pass
 
 
@@ -370,7 +450,8 @@ def task_5_2():
 # Запросите строку и выведите её первый и последний символы.
 
 def task_5_3():
-    # TODO: реализовать
+    string = input()
+    print(string[0], string[-1])
     pass
 
 
@@ -382,7 +463,9 @@ def task_5_3():
 # print(len(s.split(",")))
 
 def task_5_4():
-    # TODO: реализовать
+    s = "a,b,,c"
+    print(s.split(","))
+    print(len(s.split(",")))
     pass
 
 
@@ -394,7 +477,9 @@ def task_5_4():
 # ok = ???  # -> true
 
 def task_5_5():
-    # TODO: реализовать
+    s = "Level"
+    ok = s.lower() == s.lower()[::-1]
+    print(ok)
     pass
 
 
@@ -404,7 +489,8 @@ def task_5_5():
 # Запросите строку. Выведите её без первой и последней буквы.
 
 def task_5_6():
-    # TODO: реализовать
+    string = input()
+    print(string[1:-1])
     pass
 
 
@@ -418,7 +504,7 @@ def task_5_6():
 # re.findall(r"\d+", "a1b22c333")
 
 def task_6_1():
-    # TODO: реализовать
+    print(re.findall(r"\d+", "a1b22c333"))
     pass
 
 
@@ -430,7 +516,8 @@ def task_6_1():
 # ok = ???  # -> true
 
 def task_6_2():
-    # TODO: реализовать
+    s = "2026-10-05"
+    ok = re.fullmatch(r"^\d{4}-\d{2}-\d{2}$", s)
     pass
 
 
@@ -440,7 +527,8 @@ def task_6_2():
 # Проверьте, что строка состоит ровно из 4 цифр.
 
 def task_6_3():
-    # TODO: реализовать
+    s = 4444
+    print(re.fullmatch(r"^\d{4}$", s))
     pass
 
 
@@ -454,7 +542,7 @@ def task_6_3():
 # 4. r".+"
 
 def task_6_4():
-    # TODO: реализовать
+    print(2)
     pass
 
 
@@ -467,7 +555,9 @@ def task_6_4():
 # print(sum(nums))
 
 def task_6_5():
-    # TODO: реализовать
+    s = "a1b22c333"
+    nums = re.findall(r"\d+", s)
+    print(sum(nums))
     pass
 
 
@@ -478,7 +568,8 @@ def task_6_5():
 # (ровно 10 цифр после +7).
 
 def task_6_6():
-    # TODO: реализовать
+    number = "+78005553535"
+    print(re.fullmatch(r"\+7[0-9]{10}", number))
     pass
 
 
