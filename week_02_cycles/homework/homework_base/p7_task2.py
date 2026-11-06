@@ -13,27 +13,35 @@
 
 
 def snapshots(n):
-    # TODO
+    return [x for x in range(0, n + 1)]
     pass
 
 
 def multiples_of_three(n):
-    # TODO
+    result = []
+    for x in range(0, n + 1):
+        if x % 3 == 0:
+            result.append(x)
+    return result
     pass
 
 
 def reversed_snapshots(n):
-    # TODO
+    return sorted([x for x in range(0, n + 1)], reverse = True)
     pass
 
 
 def squares(n):
-    # TODO
+    return [x ** 2 for x in range(0, n + 1)]
     pass
 
 
 def sum_multiples_of_five(n):
-    # TODO
+    result = []
+    for x in range(0, n + 1):
+        if x % 5 == 0:
+            result.append(x)
+    return sum(result)
     pass
 
 

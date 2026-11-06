@@ -12,27 +12,37 @@
 
 
 def messages(logs):
-    # TODO
+    return [x.split(":")[1] for x in logs]
     pass
 
 
 def levels(logs):
-    # TODO
+    return [x.split(":")[0] for x in logs]
     pass
 
 
 def error_count(logs):
-    # TODO
+    list = levels(logs)
+    count = 0
+    for n in list:
+        if n == "ERROR":
+            count += 1
+    return count
     pass
 
 
 def long_messages(logs):
-    # TODO
+    list = messages(logs)
+    count = []
+    for n in list:
+        if len(n) >= 5:
+            count.append(n)
+    return count
     pass
 
 
 def has_error(logs):
-    # TODO
+    return any("ERROR" for n in [x.split(":")[0] for x in logs])
     pass
 
 

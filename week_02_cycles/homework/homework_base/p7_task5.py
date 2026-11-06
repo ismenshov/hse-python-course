@@ -12,27 +12,35 @@
 
 
 def flat(grades):
-    # TODO
+    result = []
+    for x in grades:
+        for n in x:
+            result.append(n)
+    return result
     pass
 
 
 def total(grades):
-    # TODO
+    return sum(flat(grades))
     pass
 
 
 def maximum(grades):
-    # TODO
+    return max(flat(grades))
     pass
 
 
 def count_fives(grades):
-    # TODO
+    count = 0
+    for n in flat(grades):
+        if n == 5:
+            count += 1
+    return count
     pass
 
 
 def averages(grades):
-    # TODO
+    return [sum(x) / len(x) for x in grades]
     pass
 
 

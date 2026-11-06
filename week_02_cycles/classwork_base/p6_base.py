@@ -22,6 +22,7 @@ import re
 
 def task_1_1():
     print(2 + 2 == 4, 2 * 2 != 4)
+    # True False
     pass
 
 
@@ -81,6 +82,7 @@ def task_1_5():
     a = "apple"
     b = "Apple"
     print(a == b, a < b)
+    # False False
     pass
 
 
@@ -105,6 +107,7 @@ def task_1_6():
 
 def task_2_1():
     print(not True or True and False)
+    # False
     pass
 
 
@@ -201,6 +204,7 @@ def task_3_1():
         print("medium")
     else:
         print("small")
+    # medium
     pass
 
 
@@ -260,6 +264,7 @@ def task_3_4():
         print("3")
     else:
         print("4")
+    # 3
     pass
 
 
@@ -323,6 +328,7 @@ def task_4_1():
             print("b > a")
         else:
             print("b <= a")
+    # b > a
     pass
 
 
@@ -380,6 +386,7 @@ def task_4_4():
             print("positive odd")
     else:
         print("non-positive")
+    # positive even
     pass
 
 
@@ -427,6 +434,7 @@ def task_4_6():
 def task_5_1():
     s = "Hello"
     print(s[::-1], s.lower(), len(s))
+    # olleH hello 5
     pass
 
 
@@ -466,6 +474,8 @@ def task_5_4():
     s = "a,b,,c"
     print(s.split(","))
     print(len(s.split(",")))
+    # ['a', 'b', '', 'c']
+    # 4
     pass
 
 
@@ -505,6 +515,7 @@ def task_5_6():
 
 def task_6_1():
     print(re.findall(r"\d+", "a1b22c333"))
+    # ['1', '22', '333']
     pass
 
 

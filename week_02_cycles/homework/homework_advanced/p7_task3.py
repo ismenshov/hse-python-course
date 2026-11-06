@@ -13,27 +13,43 @@
 
 
 def level_counts(logs):
-    # TODO
+    result = {}
+    for log in logs:
+        if log.split(":")[0] in result:
+            result[log.split(":")[0]] += 1
+        else:
+            result[log.split(":")[0]] = 1
+    return result
     pass
 
 
 def error_messages(logs):
-    # TODO
+    result = []
+    for log in logs:
+        if log.split(":")[0] == "ERROR":
+            result.append(log.split(":")[1])
+    return result
     pass
 
 
 def levels_by_frequency(logs):
-    # TODO
+    result = level_counts(logs)
+    return sorted(result, key=lambda level: -result[level])
     pass
 
 
 def has_error_and_warn(logs):
-    # TODO
+    result = level_counts(logs)
+    return result["ERROR"] and result["WARN"] and True
     pass
 
 
 def long_messages_upper(logs):
-    # TODO
+    result = []
+    for log in logs:
+        if len(log.split(":")[1]) > 4:
+            result.append(log.split(":")[1].upper())
+    return result
     pass
 
 

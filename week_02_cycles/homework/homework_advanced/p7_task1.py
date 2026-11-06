@@ -15,27 +15,39 @@
 
 
 def filter_outliers(temps):
-    # TODO
+    result = []
+    for t in temps:
+        if t >= -50 and t <= 50:
+            result.append(t)
+    return result
     pass
 
 
 def normalized(temps):
-    # TODO
+    return [t - sum(temps) / len(temps) for t in temps]
     pass
 
 
 def negative_indices(temps):
-    # TODO
+    result = []
+    for i, t in enumerate(temps):
+        if t < 0:
+            result.append(i)
+    return result
     pass
 
 
 def negative_dict(temps):
-    # TODO
+    result = {}
+    for i, t in enumerate(temps):
+        if t < 0:
+            result[i] = t
+    return result
     pass
 
 
 def sorted_by_abs(temps):
-    # TODO
+    return sorted(temps, key=lambda temp: abs(temp))
     pass
 
 

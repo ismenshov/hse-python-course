@@ -56,7 +56,7 @@ def safe_input(s: str) -> str:
 
 def parse_name_age(s: str) -> str:
     # s = input("Введите строку вида имя:возраст\n")
-    return (f"Hello, {s.split(":")[0]}! Next year you are {int(s.split(":")[1]) + 1}.")
+    return (f"Hello, {s.split(':')[0]}! Next year you are {int(s.split(':')[1]) + 1}.")
     raise NotImplementedError
 
 

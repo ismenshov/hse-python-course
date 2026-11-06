@@ -13,27 +13,35 @@
 
 
 def above_zero(temps):
-    # TODO
+    result = []
+    for t in temps:
+        if t > 0:
+            result.append(t)
+    return result
     pass
 
 
 def total(temps):
-    # TODO
+    return sum(temps)
     pass
 
 
 def average(temps):
-    # TODO
+    return sum(temps) / len(temps)
     pass
 
 
 def below_minus_ten(temps):
-    # TODO
+    result = 0
+    for t in temps:
+        if t < -10:
+            result += 1
+    return result
     pass
 
 
 def rounded(temps):
-    # TODO
+    return [round(t) for t in temps]
     pass
 
 

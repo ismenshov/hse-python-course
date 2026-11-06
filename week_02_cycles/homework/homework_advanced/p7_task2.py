@@ -15,27 +15,51 @@
 
 
 def snapshots(start, deltas):
-    # TODO
+    result = [start]
+    n = start
+    for x in range(start, len(deltas)):
+        n += deltas[x]
+        result.append(n)
+    return result
     pass
 
 
 def positive_snapshots(start, deltas):
-    # TODO
+    result = []
+    for x in snapshots(start, deltas):
+        if x > 0:
+            result.append(x)
+    return result
     pass
 
 
 def changes(start, deltas):
-    # TODO
+    result = []
+    n = start
+    for i, x in enumerate(deltas, start=1):
+        n += x
+        result.append((i, n))
+    return result
     pass
 
 
 def unique_values(start, deltas):
-    # TODO
+    result = {start}
+    n = start
+    for x in range(start, len(deltas)):
+        n += deltas[x]
+        result.add(n)
+    return result
     pass
 
 
 def min_max(start, deltas):
-    # TODO
+    result = {start}
+    n = start
+    for x in range(start, len(deltas)):
+        n += deltas[x]
+        result.add(n)
+    return (max(result), min(result))
     pass
 
 

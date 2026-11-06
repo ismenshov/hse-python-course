@@ -23,6 +23,7 @@ def task_1_4():
     total = 0
     for i in range(2, 6):
         total += i
+    # 14
     return total
 
 
@@ -40,6 +41,7 @@ def task_1_5():
     result = []
     for i in range(5, 0, -2):
         result.append(i)
+    # 1
     return result
 
 
@@ -74,6 +76,7 @@ def task_1_7():
         if i == 1:
             continue
         result.append(i)
+    # 2
     return result
 
 
@@ -125,6 +128,7 @@ def task_2_4():
     nums = [1, 2, 3]
     part = nums[:]
     part[0] = 99
+    # [1, 2, 3] [99, 2, 3]
     return nums, part
 
 
@@ -168,6 +172,10 @@ def task_2_7():
     a = [1, 2, 3]
     b = a
     b[0] = 99
+    """
+    При таком присваивании сохраняется не копия списка, а указатель на
+    него. В итоге, при изменении "нового" списка изменяется и исходный.
+    """
     return a
 
 
@@ -206,6 +214,7 @@ def task_2_9(s):
 def task_3_4():
     nums = [3, 1, 2]
     res = nums.sort()
+    # [1, 2, 3] None
     return nums, res
 
 
@@ -246,6 +255,7 @@ def task_3_7():
     nums = [1, 2, 3]
     nums.extend([4, 5])
     nums.remove(2)
+    # [1, 3, 4, 5]
     return nums
 
 
@@ -294,6 +304,7 @@ def task_4_4(matrix):
     for row in matrix:
         for x in row:
             result.append(x)
+    #  [1, 2, 3, 4]
     return result
 
 
@@ -334,6 +345,7 @@ def task_4_7():
     for i in range(3):
         for j in range(4):
             count += 1
+    # 4
     return count
 
 
@@ -379,6 +391,7 @@ def task_4_9(n):
 # print(res)
 
 def task_5_4():
+    # ["even", "odd", "even", "odd"]
     return ["even" if x % 2 == 0 else "odd"
             for x in range(4)]
 
@@ -412,6 +425,7 @@ def task_5_6(s):
 # print(flat)
 
 def task_5_7(matrix):
+    # [1, 2, 3, 4]
     return [x for row in matrix for x in row]
 
 
@@ -427,6 +441,7 @@ def task_5_7(matrix):
 
 def task_5_8():
     funcs = [lambda x: x + i for i in range(3)]
+    # 2
     return [f(0) for f in funcs]
 
 

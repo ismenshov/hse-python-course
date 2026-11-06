@@ -32,7 +32,6 @@ def min_coins(amount: int, coins: list) -> int:
             amount -= coin
             count += 1
     return count if amount == 0 else -1
-    raise NotImplementedError
 
 
 # ============================================================
@@ -63,7 +62,6 @@ def max_intervals(intervals: list) -> int:
             count += 1
             last_end = end
     return count
-    raise NotImplementedError
 
 
 # ============================================================
@@ -97,7 +95,6 @@ def fractional_knapsack(capacity: float, items: list) -> float:
             total += value * (capacity / weight)
             capacity = 0
     return total
-    raise NotImplementedError
 
 
 # ============================================================
@@ -134,7 +131,6 @@ def min_platforms(arrivals: list, departures: list) -> int:
         if current > best:
             best = current
     return best
-    raise NotImplementedError
 
 
 # ============================================================

@@ -21,7 +21,11 @@ import re
 # Запишите вывод в комментарии ниже.
 
 def task_1_1():
-    # TODO: реализовать
+    for i in range(1, 4):
+        print(i)
+    # 1
+    # 2
+    # 3
     pass
 
 
@@ -33,7 +37,8 @@ def task_1_1():
 #     print(i)
 
 def task_1_2():
-    # TODO: реализовать
+    for i in range(0, 5):
+        print(i)
     pass
 
 
@@ -45,7 +50,8 @@ def task_1_2():
 # Что не так и как исправить?
 
 def task_1_3():
-    # TODO: реализовать
+    for i in range(3):
+        print(i)
     pass
 
 
@@ -58,7 +64,7 @@ def task_1_3():
 # print(total)
 
 def task_1_4():
-    # TODO: реализовать
+    # 14
     pass
 
 
@@ -73,7 +79,7 @@ def task_1_4():
 # 4. 4 2
 
 def task_1_5():
-    # TODO: реализовать
+    # 1
     pass
 
 
@@ -83,7 +89,10 @@ def task_1_5():
 # Запросите число n и выведите сумму чисел от 1 до n.
 
 def task_1_6():
-    # TODO: реализовать
+    total = 0
+    for i in range(1, int(input())):
+        total += i
+    print(total)
     pass
 
 
@@ -98,7 +107,7 @@ def task_1_6():
 # print(nums[0], nums[-1], len(nums))
 
 def task_2_1():
-    # TODO: реализовать
+    # 5 15 3
     pass
 
 
@@ -110,7 +119,8 @@ def task_2_1():
 # ???
 
 def task_2_2():
-    # TODO: реализовать
+    nums = [1, 2, 3]
+    nums[0] = 100
     pass
 
 
@@ -124,7 +134,7 @@ def task_2_2():
 # 4. [1, 2, 3]
 
 def task_2_3():
-    # TODO: реализовать
+    # 2
     pass
 
 
@@ -137,8 +147,8 @@ def task_2_3():
 # print(nums, part)
 
 def task_2_4():
-    # TODO: реализовать
-    pass
+    # [1, 2, 3] [99, 2, 3]
+    print("[1, 2, 3] [99, 2, 3]")
 
 
 # ------------------------------------------------------------
@@ -149,8 +159,8 @@ def task_2_4():
 # Что не так и как исправить?
 
 def task_2_5():
-    # TODO: реализовать
-    pass
+    nums = [1, 2, 3]
+    print(nums[2])
 
 
 # ------------------------------------------------------------
@@ -159,7 +169,10 @@ def task_2_5():
 # Запросите 5 чисел и сохраните их в список. Выведите список.
 
 def task_2_6():
-    # TODO: реализовать
+    list = [0, 0, 0, 0, 0]
+    for i in range(0, 5):
+        list[i] = int(input())
+    print(list)
     pass
 
 
@@ -175,7 +188,7 @@ def task_2_6():
 # print(nums)
 
 def task_3_1():
-    # TODO: реализовать
+    # [1, 2, 3]
     pass
 
 
@@ -187,7 +200,8 @@ def task_3_1():
 # ???
 
 def task_3_2():
-    # TODO: реализовать
+    nums = [1, 2, 3]
+    nums.append(3)
     pass
 
 
@@ -201,7 +215,7 @@ def task_3_2():
 # 4. None
 
 def task_3_3():
-    # TODO: реализовать
+    # 2
     pass
 
 
@@ -213,7 +227,7 @@ def task_3_3():
 # print(nums, res)
 
 def task_3_4():
-    # TODO: реализовать
+    # [1, 2, 3] None
     pass
 
 
@@ -226,7 +240,9 @@ def task_3_4():
 # Что не так и как исправить?
 
 def task_3_5():
-    # TODO: реализовать
+    nums = [1, 2, 3]
+    nums.append(4)
+    print(nums)
     pass
 
 
@@ -237,7 +253,11 @@ def task_3_5():
 # отсортируйте и выведите.
 
 def task_3_6():
-    # TODO: реализовать
+    list = [0, 0, 0, 0, 0]
+    for i in range(0, 5):
+        list[i] = int(input())
+    list.sort()
+    print(list)
     pass
 
 
@@ -253,7 +273,12 @@ def task_3_6():
 #         print(i, j)
 
 def task_4_1():
-    # TODO: реализовать
+    """
+    0 0
+    0 1
+    1 0
+    1 1
+    """
     pass
 
 
@@ -265,7 +290,8 @@ def task_4_1():
 # print(???)
 
 def task_4_2():
-    # TODO: реализовать
+    matrix = [[1, 2], [3, 4]]
+    print(matrix[1][1])
     pass
 
 
@@ -277,7 +303,9 @@ def task_4_2():
 #     print(i, j)
 
 def task_4_3():
-    # TODO: реализовать
+    for i in range(2):
+        for j in range(2):
+            print(i, j)
     pass
 
 
@@ -290,7 +318,12 @@ def task_4_3():
 #         print(x)
 
 def task_4_4():
-    # TODO: реализовать
+    """
+    1
+    2
+    3
+    4
+    """
     pass
 
 
@@ -301,7 +334,8 @@ def task_4_4():
 # если известно, что матрица 2×2.
 
 def task_4_5():
-    # TODO: реализовать
+    matrix = [[1, 2], [3, 4]]
+    print(matrix[0][0] + matrix[0][1] + matrix[1][0] + matrix[1][1])
     pass
 
 
@@ -312,7 +346,10 @@ def task_4_5():
 # и сохраните в список списков. Выведите его.
 
 def task_4_6():
-    # TODO: реализовать
+    list = [[], [], []]
+    for i in range(0, 3):
+        list[i] = input().split()
+    print(list)
     pass
 
 
@@ -327,7 +364,7 @@ def task_4_6():
 # print(nums)
 
 def task_5_1():
-    # TODO: реализовать
+    # [0, 2, 4, 6]
     pass
 
 
@@ -338,7 +375,10 @@ def task_5_1():
 # squares = ???
 
 def task_5_2():
-    # TODO: реализовать
+    squares = []
+    for i in range(0, 5):
+        squares.append(i ** 2)
+    print(squares)
     pass
 
 
@@ -352,7 +392,7 @@ def task_5_2():
 # 4. [1, 3, 5]
 
 def task_5_3():
-    # TODO: реализовать
+    # 1
     pass
 
 
@@ -364,7 +404,7 @@ def task_5_3():
 # print(res)
 
 def task_5_4():
-    # TODO: реализовать
+    # ['even', 'odd', 'even', 'odd']
     pass
 
 
@@ -376,7 +416,12 @@ def task_5_4():
 # long_words = ???
 
 def task_5_5():
-    # TODO: реализовать
+    words = ["a", "hello", "hi", "world"]
+    long_words = []
+    for w in words:
+        if len(w) > 3:
+            long_words.append(w)
+    print(long_words)
     pass
 
 
@@ -387,7 +432,8 @@ def task_5_5():
 # через ord().
 
 def task_5_6():
-    # TODO: реализовать
+    ord_word = input()
+    print([ord(w) for w in ord_word])
     pass
 
 

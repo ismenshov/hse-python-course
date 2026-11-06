@@ -17,45 +17,23 @@ True при первом совпадении, иначе False после ци�
 
 
 def is_long_enough(password, min_length=8):
-    """True, если длина пароля >= min_length, иначе False.
-
-    См.: https://docs.python.org/3/library/functions.html#len
-    """
-    pass
+    return min_length <= len(password)
 
 
 def has_lowercase(password):
-    """True, если есть хотя бы одна строчная буква, иначе False.
-
-    См.: https://docs.python.org/3/library/stdtypes.html#str.islower
-    """
-    pass
+    return any(p.islower() for p in password)
 
 
 def has_no_spaces(password):
-    """True, если нет пробельных символов, иначе False.
-
-    См.: https://docs.python.org/3/library/stdtypes.html#str.isspace
-    """
-    pass
+    return not any(p.isspace() for p in password)
 
 
 def is_alphanumeric(password):
-    """True, если каждый символ — буква или цифра. Пустая строка валидна.
-
-    См.: https://docs.python.org/3/library/stdtypes.html#str.isalnum
-    """
-    pass
+    return len(password) == 0 or password.isalnum()
 
 
 def starts_not_with_digit(password):
-    """True, если пароль пустой или первый символ не цифра.
-
-    См.:
-    - https://docs.python.org/3/library/stdtypes.html#str.isdigit
-    - https://docs.python.org/3/tutorial/introduction.html#strings
-    """
-    pass
+    return not password or not password[0].isdigit()
 
 
 CASES = {

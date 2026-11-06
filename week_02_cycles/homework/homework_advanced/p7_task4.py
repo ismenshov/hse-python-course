@@ -13,27 +13,35 @@
 
 
 def names(cart):
-    # TODO
+    return ([name[0] for name in cart])
     pass
 
 
 def total(cart):
-    # TODO
+    return sum([item[1] * item[2] for item in cart])
     pass
 
 
 def expensive(cart):
-    # TODO
+    result = []
+    for item in cart:
+        if item[1] > 100:
+            result.append(item)
+    return result
     pass
 
 
 def sorted_by_position_cost(cart):
-    # TODO
+    result = [(name, price * quantity) for name, price, quantity in cart]
+    return sorted(result, key=lambda item: item[1], reverse=True)
     pass
 
 
 def position_costs(cart):
-    # TODO
+    result = {}
+    for item in cart:
+        result[item[0]] = item[1] * item[2]
+    return result
     pass
 
 

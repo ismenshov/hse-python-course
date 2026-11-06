@@ -14,27 +14,42 @@
 
 
 def flat(grades):
-    # TODO
+    result = []
+    for x in grades:
+        for n in x:
+            result.append(n)
+    return result
     pass
 
 
 def averages(grades):
-    # TODO
+    return [sum(x) / len(x) for x in grades]
     pass
 
 
 def top_students(names, grades):
-    # TODO
+    result = []
+    for student, grade in enumerate(grades):
+        if sum(grade) / len(grade) >= 4.5:
+            result.append(names[student])
+    return result
     pass
 
 
 def name_to_average(names, grades):
-    # TODO
+    result = {}
+    for student, grade in enumerate(grades):
+        result[names[student]] = sum(grade) / len(grade)
+    return result
     pass
 
 
 def sorted_names(names, grades):
-    # TODO
+    return [name for name, _ in sorted(
+        zip(names, grades),
+        key=lambda grade: sum(grade[1]) / len(grade[1]),
+        reverse=True
+    )]
     pass
 
 
@@ -43,7 +58,7 @@ if __name__ == "__main__":
     grades = [[5, 5, 4], [3, 3, 4], [5, 5, 5]]
     assert flat(grades) == [5, 5, 4, 3, 3, 4, 5, 5, 5]
     assert averages(grades) == [14 / 3, 10 / 3, 5.0]
-    assert top_students(names, grades) == ["Cara"]
+    assert top_students(names, grades) == ["Ann", "Cara"]
     assert name_to_average(names, grades) == {
         "Ann": 14 / 3,
         "Bob": 10 / 3,

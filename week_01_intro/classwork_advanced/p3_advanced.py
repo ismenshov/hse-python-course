@@ -47,7 +47,6 @@ def has_duplicates_fast(nums: list) -> bool:
         else:
             unique_num.add(i)
     return False
-    raise NotImplementedError
 
 
 # ============================================================
@@ -81,22 +80,18 @@ def has_duplicates_fast(nums: list) -> bool:
 
 def complexity_a() -> str:
     return "O(n)"
-    raise NotImplementedError
 
 
 def complexity_b() -> str:
     return "O(n^2)"
-    raise NotImplementedError
 
 
 def complexity_c() -> str:
     return "O(log n)"
-    raise NotImplementedError
 
 
 def complexity_d() -> str:
     return "O(n^2)"
-    raise NotImplementedError
 
 
 # ============================================================

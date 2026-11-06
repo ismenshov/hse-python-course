@@ -12,27 +12,30 @@
 
 
 def add_price(cart, price):
-    # TODO
+    cart.append(price)
+    return cart
     pass
 
 
 def remove_first(cart):
-    # TODO
+    cart.pop(0)
+    return cart
     pass
 
 
 def sorted_cart(cart):
-    # TODO
+    cart.sort()
+    return cart
     pass
 
 
 def copy_cart(cart):
-    # TODO
+    return cart.copy()
     pass
 
 
 def discounted(cart):
-    # TODO
+    return [x * 0.9 for x in cart]
     pass
 
 
