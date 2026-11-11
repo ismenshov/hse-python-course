@@ -201,7 +201,7 @@ def task_3_1():
 
 def task_3_2():
     nums = [1, 2, 3]
-    nums.append(3)
+    nums.append(10)
     pass
 
 
